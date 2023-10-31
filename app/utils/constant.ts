@@ -7,6 +7,7 @@ export const route = {
     submission: "/submission",
     commision: "/commision",
     lms: "/lms",
+    profile: "/profile"
 };
 
 export const navLinks = [
