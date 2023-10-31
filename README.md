@@ -1,6 +1,5 @@
 # synergy-test
 
-
 To get started, run:
 
 ```bash
@@ -15,7 +14,7 @@ There are a few final steps that we were not able to perform automatically. We h
 
 ### To do:
 
-- Integrate Vercel with your repository host for continuous deployments at https://vercel.com/new
+-   Integrate Vercel with your repository host for continuous deployments at https://vercel.com/new
 
 ## Scripts
 
