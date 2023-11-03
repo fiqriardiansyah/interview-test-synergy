@@ -7,7 +7,10 @@ export const route = {
     submission: "/submission",
     commision: "/commision",
     lms: "/lms",
-    profile: "/profile"
+    profile: "/profile",
+    crmClient: "/crm",
+    crmPolicy: "/crm/policy",
+    crmSupport: "/crm/support"
 };
 
 export const navLinks = [
