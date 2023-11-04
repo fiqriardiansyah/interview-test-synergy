@@ -1,5 +1,10 @@
+"use client"
+
 import NavBar from "@/components/nav-bar";
 import "../styles/globals.css";
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient({ defaultOptions: { queries: { retry: 0, refetchInterval: false, cacheTime: 0, refetchOnWindowFocus: false, refetchIntervalInBackground: false } } })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -19,7 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </head>
             <body>
                 <NavBar />
-                {children}
+                <QueryClientProvider client={queryClient}>
+                    {children}
+                </QueryClientProvider>
             </body>
         </html>
     );

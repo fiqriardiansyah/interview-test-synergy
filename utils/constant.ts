@@ -1,6 +1,8 @@
 import { FiSearch, FiSettings } from "react-icons/fi";
 import { MdOutlineNotificationsNone } from "react-icons/md";
 
+export const MESSAGE_ERROR_DEFAULT = "Ooops something went wrong!"
+
 export const route = {
     dashboard: "/",
     crm: "/crm",

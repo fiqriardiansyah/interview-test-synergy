@@ -6,7 +6,7 @@ import NavActions from "./nav-actions";
 
 export default function NavBar() {
     return (
-        <nav className="w-full border-b border-gray-200 sticky top-0">
+        <nav className="w-full border-b border-gray-200 sticky top-0 bg-white z-50">
             <div className="w-full container mx-auto px-8 py-3 flex items-center justify-between">
                 <div className="flex items-center gap-10">
                     <Link href="/" className="flex items-center gap-2 font-bold text-xl">
