@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import Button from "../common/button";
-import { IoArrowBackOutline } from 'react-icons/io5'
+import { IoArrowBackOutline } from "react-icons/io5";
 import { route } from "@/utils/constant";
 
 export default function NotFound() {
-    const router = useRouter()
+    const router = useRouter();
 
     const goBack = () => {
-        router.back()
-    }
+        router.back();
+    };
 
     const toHome = () => {
-        router.push(route.crmClient)
-    }
+        router.push(route.crmClient);
+    };
 
     return (
         <div className="flex flex-col justify-center gap-6">
@@ -31,5 +31,5 @@ export default function NotFound() {
                 </Button>
             </div>
         </div>
-    )
+    );
 }

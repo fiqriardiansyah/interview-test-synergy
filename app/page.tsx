@@ -5,5 +5,5 @@ export default function Page() {
         <div className="container mx-auto px-8 min-h-[80vh] flex items-center">
             <NotFound />
         </div>
-    )
+    );
 }

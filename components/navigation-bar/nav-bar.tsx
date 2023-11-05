@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { GrGoogleWallet } from "react-icons/gr";
 import Avatar from "./avatar";

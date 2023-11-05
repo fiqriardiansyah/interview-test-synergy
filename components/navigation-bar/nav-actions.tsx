@@ -11,7 +11,7 @@ const NavActions = () => {
             ))}
         </div>
     );
-}
+};
 
 const menuActions = navActions.map((Action) => ({
     key: Action.title,
@@ -20,9 +20,9 @@ const menuActions = navActions.map((Action) => ({
             <Action.icon />
             <span>{Action.title}</span>
         </NavActionBtn>
-    )
-}))
+    ),
+}));
 
-NavActions.menuActions = menuActions
+NavActions.menuActions = menuActions;
 
 export default NavActions;

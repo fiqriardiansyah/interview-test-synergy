@@ -1,28 +1,27 @@
+import React from "react";
 import FilterButton from "./filter-button";
 import FilterPopup from "./filter-popup";
 import Search from "./search";
+import { CrmContext } from "../../context/crm";
 
 export default function SearchBar() {
+    const { clients, genderSelected, maritalSelected, employmentSelected, setGenderSelected, setMaritalSelected, setEmploymentSelected } =
+        React.useContext(CrmContext);
+
     return (
-        <div className="flex items-center gap-5">
-            <Search />
+        <div className="flex items-starat md:items-center gap-5 flex-col md:flex-row">
+            <Search clients={clients} />
             <div className="flex items-center gap-4 flex-wrap">
-                <FilterPopup options={["Male", "Female"]}>
-                    <FilterButton>
-                        gender
-                    </FilterButton>
+                <FilterPopup selected={genderSelected} setSelected={setGenderSelected} options={["Male", "Female"]}>
+                    <FilterButton className={`${genderSelected?.length ? "!border-blue-200 !text-blue-500" : ""}`}>gender</FilterButton>
                 </FilterPopup>
-                <FilterPopup options={["Married", "Divorced", "Single"]}>
-                    <FilterButton>
-                        marital
-                    </FilterButton>
+                <FilterPopup selected={maritalSelected} setSelected={setMaritalSelected} options={["Married", "Divorced", "Single"]}>
+                    <FilterButton className={`${maritalSelected?.length ? "!border-blue-200 !text-blue-500" : ""}`}>marital</FilterButton>
                 </FilterPopup>
-                <FilterPopup options={["Employed", "Unemployed"]}>
-                    <FilterButton>
-                        employment
-                    </FilterButton>
+                <FilterPopup selected={employmentSelected} setSelected={setEmploymentSelected} options={["Employed", "Unemployed"]}>
+                    <FilterButton className={`${employmentSelected?.length ? "!border-blue-200 !text-blue-500" : ""}`}>employment</FilterButton>
                 </FilterPopup>
             </div>
         </div>
-    )
+    );
 }

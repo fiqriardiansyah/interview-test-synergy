@@ -1,7 +1,7 @@
 import { Financials } from "@/service/endpoints";
 
 const FinancialsTable = ({ financials }: { financials?: Financials }) => {
-    const keys = Object.keys(financials || {})
+    const keys = Object.keys(financials || {});
     return (
         <div className="rounded-2xl border border-gray-100 shadow-sm">
             {keys?.map((key, index) => (
@@ -11,13 +11,13 @@ const FinancialsTable = ({ financials }: { financials?: Financials }) => {
                 </button>
             ))}
         </div>
-    )
-}
+    );
+};
 
 const Loading = () => {
-    return <div className="rounded-2xl overflow-hidden bg-gray-100 h-[100px] w-full"></div>
-}
+    return <div className="rounded-2xl overflow-hidden bg-gray-100 h-[100px] w-full"></div>;
+};
 
-FinancialsTable.Loading = Loading
+FinancialsTable.Loading = Loading;
 
-export default FinancialsTable
+export default FinancialsTable;

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import { route } from "@/utils/constant";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CrmProvider } from "./context/crm";
 
 export default function Layout({ children }: { children: any }) {
-
-    const pathname = usePathname()
+    const pathname = usePathname();
     return (
         <div className="container mx-auto px-8">
             <h1 className="text-3xl font-semibold my-5 text-gray-700">CRM</h1>
@@ -28,7 +28,7 @@ export default function Layout({ children }: { children: any }) {
                     </a>
                 </Link>
             </div>
-            {children}
+            <CrmProvider>{children}</CrmProvider>
         </div>
-    )
+    );
 }

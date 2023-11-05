@@ -1,42 +1,47 @@
-import React from "react"
+import React from "react";
 
-export const breakPoints = { // based on tailwinds breakpoints
+export const breakPoints = {
     sm: 640,
     md: 768,
     lg: 1024,
     xl: 1280,
-    '2xl': 1536
-}
+    "2xl": 1536,
+};
 
-type GetBreakpoint = { width: number; breakPoint: keyof typeof breakPoints }
-
-const getBreakPoint = () => {
-    const currWidth = window.innerWidth
-
-    if (0 < currWidth && currWidth < breakPoints.sm) return { width: currWidth, breakPoint: "sm" }
-    if (breakPoints.sm < currWidth && currWidth < breakPoints.md) return { width: currWidth, breakPoint: "md" }
-    if (breakPoints.md < currWidth && currWidth < breakPoints.lg) return { width: currWidth, breakPoint: "lg" }
-    if (breakPoints.lg < currWidth && currWidth < breakPoints.xl) return { width: currWidth, breakPoint: "xl" }
-    if (currWidth >= breakPoints["2xl"]) return { width: currWidth, breakPoint: "2xl" }
-}
+type GetBreakpoint = { width: number; breakPoint: keyof typeof breakPoints };
 
 const useResize = () => {
-    const [size, setSize] = React.useState<GetBreakpoint | null>(null)
-
-    const onResize = () => {
-        setSize(getBreakPoint() as GetBreakpoint);
-    }
+    const [size, setSize] = React.useState<GetBreakpoint | null>(null);
 
     React.useEffect(() => {
+        const onResize = () => {
+            if (0 < window.innerWidth && window.innerWidth < breakPoints.sm) {
+                setSize({ width: window.innerWidth, breakPoint: "sm" });
+                return;
+            }
+            if (breakPoints.sm < window.innerWidth && window.innerWidth < breakPoints.md) {
+                setSize({ width: window.innerWidth, breakPoint: "md" });
+                return;
+            }
+            if (breakPoints.md < window.innerWidth && window.innerWidth < breakPoints.lg) {
+                setSize({ width: window.innerWidth, breakPoint: "lg" });
+                return;
+            }
+            if (breakPoints.lg < window.innerWidth && window.innerWidth < breakPoints.xl) {
+                setSize({ width: window.innerWidth, breakPoint: "xl" });
+                return;
+            }
+            setSize({ width: window.innerWidth, breakPoint: "2xl" });
+        };
+
         onResize();
-        window.addEventListener('resize', onResize);
+        window.addEventListener("resize", onResize);
         return () => {
-            window.removeEventListener('resize', onResize);
-        }
-    }, [])
+            window.removeEventListener("resize", onResize);
+        };
+    }, []);
 
-    return size
-
-}
+    return size;
+};
 
 export default useResize;

@@ -21,13 +21,13 @@ const ClientInformation = ({ clientInformation }: { clientInformation?: ClientIn
                 <span className="capitalize font-normal">{clientInformation?.employmentStatus}</span>
             </p>
         </div>
-    )
-}
+    );
+};
 
 const Loading = () => {
-    return <div className="rounded-2xl overflow-hidden bg-gray-100 h-[100px] w-full"></div>
-}
+    return <div className="rounded-2xl overflow-hidden bg-gray-100 h-[100px] w-full"></div>;
+};
 
-ClientInformation.Loading = Loading
+ClientInformation.Loading = Loading;
 
-export default ClientInformation
+export default ClientInformation;

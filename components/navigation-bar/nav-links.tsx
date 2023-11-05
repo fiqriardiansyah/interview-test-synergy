@@ -11,7 +11,7 @@ const NavLinks = () => {
             ))}
         </div>
     );
-}
+};
 
 const menuLinks = navLinks.map((link) => ({
     key: link.href,
@@ -19,9 +19,9 @@ const menuLinks = navLinks.map((link) => ({
         <NavLink href={link.href} className="font-normal text-sm p-0 bg-transparent hover:bg-transparent focus:bg-transparent">
             {link.text}
         </NavLink>
-    )
-}))
+    ),
+}));
 
-NavLinks.menuLinks = menuLinks
+NavLinks.menuLinks = menuLinks;
 
 export default NavLinks;

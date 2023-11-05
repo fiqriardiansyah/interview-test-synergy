@@ -14,4 +14,4 @@ export default function useOutsideClick(ref: React.RefObject<HTMLElement>, callb
             document.removeEventListener("click", handleClick);
         };
     });
-};
+}
