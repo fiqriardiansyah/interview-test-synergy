@@ -1,5 +1,22 @@
 import { MESSAGE_ERROR_DEFAULT } from "@/utils/constant";
 
+export interface Client {
+    id: string;
+    name: string;
+    dob: Date;
+    gender: Gender;
+    maritalStatus: MaritalStatus;
+    employmentStatus: EmploymentStatus;
+    image?: string;
+}
+
+export type EmploymentStatus = "Employed" | "Unemployed";
+
+export type Gender = "Female" | "Male";
+
+export type MaritalStatus = "Single" | "Divorced" | "Married";
+
+
 export interface Profile {
     clientInformation: ClientInformation;
     financials: Financials;
@@ -41,6 +58,16 @@ export class Endpoints {
     static getDataProfile = async () => {
         try {
             const req = await fetch(this.baseUrl + "/profile", { cache: 'no-store' });
+            const json = await req.json();
+            if (!req.ok) throw new Error(json?.message);
+            return json
+        } catch (e: any) {
+            throw new Error(e?.message || MESSAGE_ERROR_DEFAULT)
+        }
+    }
+    static getDataClients = async () => {
+        try {
+            const req = await fetch(this.baseUrl + "/clients", { cache: 'no-store' });
             const json = await req.json();
             if (!req.ok) throw new Error(json?.message);
             return json

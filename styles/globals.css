@@ -6,4 +6,80 @@
     body {
         @apply font-poppins;
     }
+
+    /* override antd.design components */
+    /* SELECT COMPONENTS */
+    .select-clients {
+        @apply !shadow-sm !rounded-xl
+    }
+
+    .select-clients .ant-select-selector {
+        @apply !border-2 !border-gray-300 !rounded-lg
+    }
+
+    .select-clients .ant-select-selection-placeholder {
+        @apply !text-gray-400 !font-poppins !font-normal !ml-8
+    }
+
+    .select-clients .ant-select-selection-item {
+        @apply !ml-8
+    }
+
+    .select-clients .ant-select-selection-search-input {
+        @apply !ml-8
+    }
+
+    /* TABLE COMPONENTS */
+    .table-clients {
+        @apply !shadow-sm !rounded-xl !border !border-gray-200 !overflow-hidden
+    }
+
+    .table-clients .ant-table-thead .ant-table-cell {
+        @apply !font-normal
+    }
+
+    .table-clients .ant-checkbox-wrapper {
+        @apply !ml-[12px]
+    }
+
+    .table-clients .ant-pagination {
+        @apply !justify-between !px-5
+    }
+
+    .table-clients .ant-pagination li {
+        @apply !h-fit
+    }
+
+    .table-clients .ant-pagination li.ant-pagination-next {
+        @apply !flex-1 !flex !justify-end !pointer-events-none
+    }
+
+    .table-clients .ant-pagination li.ant-pagination-next button {
+        @apply !pointer-events-auto
+    }
+
+    .table-clients .ant-pagination li.ant-pagination-prev {
+        @apply !flex-1 !pointer-events-none
+    }
+
+    .table-clients .ant-pagination li.ant-pagination-prev button {
+        @apply !pointer-events-auto
+    }
+
+
+    .table-clients .ant-pagination .ant-pagination-item {
+        @apply !font-medium !w-10 !h-10 !flex !items-center !justify-center
+    }
+
+    .table-clients .ant-pagination .ant-pagination-item-active a {
+        @apply !border-none !text-gray-600
+    }
+
+    .table-clients .ant-pagination .ant-pagination-item-active {
+        @apply !border-none !bg-gray-50
+    }
+
+    .table-clients .ant-table-selection-column {
+        @apply !z-10
+    }
 }

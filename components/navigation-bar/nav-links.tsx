@@ -1,4 +1,4 @@
-import { navLinks } from "../utils/constant";
+import { navLinks } from "../../utils/constant";
 import NavLink from "./nav-link";
 
 const NavLinks = () => {

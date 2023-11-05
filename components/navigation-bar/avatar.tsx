@@ -1,9 +1,9 @@
 "use client"
 
 import Image from "next/image";
-import useResize, { breakPoints } from "../hooks/useResize";
+import useResize, { breakPoints } from "../../hooks/useResize";
 import Link from "next/link";
-import { route } from "../utils/constant";
+import { route } from "../../utils/constant";
 import { Dropdown, MenuProps } from "antd";
 import NavLinks from "./nav-links";
 import NavActions from "./nav-actions";

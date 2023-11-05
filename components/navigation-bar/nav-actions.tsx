@@ -1,4 +1,4 @@
-import { navActions } from "../utils/constant";
+import { navActions } from "../../utils/constant";
 import NavActionBtn from "./nav-action-btn";
 
 const NavActions = () => {

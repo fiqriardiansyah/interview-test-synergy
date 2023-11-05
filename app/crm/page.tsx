@@ -1,7 +1,9 @@
+import SearchBar from "./components/search-bar";
+
 export default function Page() {
     return (
-        <div className="w-full container mx-auto px-8 flex justify-center">
-            <h1>CRM</h1>
+        <div className="w-full flex flex-col gap-6 pb-20">
+            <SearchBar />
         </div>
     )
 }
