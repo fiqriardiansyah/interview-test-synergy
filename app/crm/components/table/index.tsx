@@ -13,6 +13,7 @@ import Button from "@/components/common/button";
 import { MdArrowBack, MdArrowForward, MdFilterList } from "react-icons/md";
 import ImageWithFallback from "@/components/common/image-with-fallback";
 import { HiOutlineArrowSmDown, HiOutlineArrowSmUp } from "react-icons/hi";
+import useResize, { breakPoints } from "@/hooks/useResize";
 
 const itemRender: PaginationProps["itemRender"] = (_, type, originalElement) => {
     if (type === "prev") {
@@ -36,6 +37,7 @@ const itemRender: PaginationProps["itemRender"] = (_, type, originalElement) => 
 
 export default function TableClients() {
     const { clients } = React.useContext(CrmContext);
+    const size = useResize();
 
     const columns: ColumnsType<Client> = [
         {
@@ -44,7 +46,7 @@ export default function TableClients() {
             fixed: true,
             render: (text, record) => (
                 <Link href={route.profile} legacyBehavior>
-                    <a className="flex items-start md:items-center flex-col md:flex-row gap-3">
+                    <a className="flex items-start lg:items-center flex-col lg:flex-row gap-3">
                         <ImageWithFallback
                             src={record?.image || "/error-placeholder.png"}
                             alt={record?.name}
